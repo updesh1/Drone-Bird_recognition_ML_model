@@ -9,7 +9,7 @@ st.title("Bird vs Drone Classifier")
 
 # Step 1: Download model
 if not os.path.exists("best_model.h5"):
-    st.write("Downloading model... please wait ⏳")
+    st.write("Downloading model...")
     
     url = "https://drive.google.com/uc?id=1mmDg2CZ2b4rlNdmFulpFRkHXCL9n_9mo"
     gdown.download(url, "best_model.h5", quiet=False)
@@ -42,4 +42,3 @@ else:
 
 
 
-https://drive.google.com/uc?id=1mmDg2CZ2b4rlNdmFulpFRkHXCL9n_9mo

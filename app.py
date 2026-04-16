@@ -10,7 +10,7 @@ st.title("Bird vs Drone Classifier")
 # Download model
 if not os.path.exists("final_model.h5"):
     st.write("Downloading model...")
-    url = "https://drive.google.com/uc?id=1IO7rvLeybp3BFATVej-RUI11kW7vAIqg"
+    url = "https://drive.google.com/uc?id=1aliWUn6FYXHwO1FYA4Zp2ydNnvvt4fQy"
     gdown.download(url, "final_model.h5", quiet=False)
 
 # Load model

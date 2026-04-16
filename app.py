@@ -8,15 +8,15 @@ import numpy as np
 st.title("Bird vs Drone Classifier")
 
 # Step 1: Download model
-if not os.path.exists("best_model.h5"):
+if not os.path.exists("best_model.keras"):
     st.write("Downloading model...")
     
     url = "https://drive.google.com/uc?id=1EK7LryU3ji_ARy8IcEbf34AGDvxflLUy"
-    gdown.download(url, "best_model.h5", quiet=False)
+    gdown.download(url, "best_model.keras", quiet=False)
 
 # Step 2: Load model
 st.write("Loading model...")
-model = load_model("best_model.h5")
+model = load_model("best_model.keras")
 
 # Step 3: Upload UI (IMPORTANT)
 uploaded_file = st.file_uploader("Upload an image", type=["jpg","png","jpeg"])
@@ -32,9 +32,9 @@ if uploaded_file is not None:
     pred = model.predict(img_array)
 
     if pred[0][0] > 0.5:
-        st.success("Drone Detected 🚁")
+        st.success("Drone Detected")
     else:
-        st.success("Bird Detected 🐦")
+        st.success("Bird Detected")
 
 else:
     st.info("Please upload an image to start prediction")

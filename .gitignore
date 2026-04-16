@@ -1,3 +1,7 @@
+# Model files
 *.h5
-models/*.h5
 *.keras
+
+# Python cache
+__pycache__/
+.ipynb_checkpoints/

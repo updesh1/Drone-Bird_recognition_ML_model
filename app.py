@@ -45,17 +45,20 @@ if uploaded_file is not None:
 
     score = float(prediction[0][0])
 
+    drone_prob = score
+    bird_prob = 1 - score
+
     st.write("---")
 
-    # Result
     if score > 0.5:
         st.write("Result: Drone")
-        st.write(f"Confidence: {score:.2f}")
-        st.progress(int(score * 100))
     else:
         st.write("Result: Bird")
-        st.write(f"Confidence: {1 - score:.2f}")
-        st.progress(int((1 - score) * 100))
+
+    st.write(f"Drone Probability: {drone_prob:.4f}")
+    st.write(f"Bird Probability: {bird_prob:.4f}")
+
+    st.progress(int(max(drone_prob, bird_prob) * 100))
 
 # Small footer
 st.write("---")
